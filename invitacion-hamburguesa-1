@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Invitación a Comer Hamburguesa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9800, #ff5722);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: white;
+            width: 350px;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #ff5722;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        button {
+            background: #ff5722;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background: #e64a19;
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            padding: 8px;
+            resize: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- Paso 1 -->
+        <div id="step1">
+            <h1>🍔 Invitación</h1>
+            <p>
+                Hola 👋<br>
+                ¿Te gustaría salir a comer una hamburguesa conmigo?
+            </p>
+            <button onclick="continuar()">Continuar</button>
+        </div>
+
+        <!-- Paso 2 -->
+        <div id="step2" class="hidden">
+            <h1>📅 El Plan</h1>
+            <p>
+                La idea es ir por unas hamburguesas,
+                charlar un rato y pasarla bien 😄
+            </p>
+
+            <textarea placeholder="Escribe aquí qué opinas del plan..."></textarea>
+
+            <button onclick="finalizar()">Enviar</button>
+        </div>
+
+        <!-- Paso 3 -->
+        <div id="step3" class="hidden">
+            <h1>✅ ¡Perfecto!</h1>
+            <p>
+                Gracias por responder.<br>
+                ¡Entonces quedamos para esas hamburguesas! 🍟🍔
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function continuar() {
+            document.getElementById("step1").classList.add("hidden");
+            document.getElementById("step2").classList.remove("hidden");
+        }
+
+        function finalizar() {
+            document.getElementById("step2").classList.add("hidden");
+            document.getElementById("step3").classList.remove("hidden");
+        }
+    </script>
+
+</body>
+</html>
